@@ -2,4 +2,14 @@
 
 CI 102/103 project to create a website to let users input ingredients they have, and will generate a list of recipes containing only the ingredients they currently have. 
 
-To run the app, make sure you have [node](https://nodejs.org/en/) installed. Run `npm install` to install the dependencies and then `node app.js`. You should be able to go to your browser at `localhost:3000` to access the website.
+To run the app, make sure you have [node](https://nodejs.org/en/) installed.
+
+Go into the api directory and run `npm i`.
+Then go into the client directory and run `npm i`.
+
+Once the dependencies are installed, we can run the app.
+
+Go into the api directory and run `npm start`.
+Launch a new terminal and go into the client directory and run `npm start`.
+
+The app should now be running on `localhost:3000`.
