@@ -4,8 +4,8 @@ CI 102/103 project to create a website to let users input ingredients they have,
 
 To run the app, make sure you have [node](https://nodejs.org/en/) installed.
 
-Go into the api directory and run `npm i`.
-Then go into the client directory and run `npm i`.
+Go into the api directory and run `npm install`.
+Then go into the client directory and run `npm install`.
 
 Once the dependencies are installed, we can run the app.
 
