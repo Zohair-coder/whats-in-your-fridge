@@ -1,30 +1,20 @@
 import React from 'react';
+import { Switch, Route } from "react-router-dom"
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { apiResponse: "" };
-  }
+import Home from "./pages/home/Home"
+import Results from "./pages/results/Results"
 
-  callAPI() {
-    fetch("http://localhost:9000/testAPI")
-      .then(res => res.text())
-      .then(res => this.setState({ apiResponse: res }));
-  }
 
-  componentDidMount() {
-    this.callAPI();
-  }
-
-  render() {
-    return (
+function App() {
+  return (
     <div>
-      <h1>What's in your fridge?</h1>
-      <p className="App-intro">{this.state.apiResponse}</p>
+      <Switch>
+        <Route exact path="/"><Home /></Route>
+        <Route path="/results"><Results /></Route>
+      </Switch>
     </div>
-    
-    )
-  }
+  )
 }
+
 
 export default App;
