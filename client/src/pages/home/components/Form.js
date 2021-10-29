@@ -30,7 +30,6 @@ function Form() {
         .then(response => response.data)
         .then(response => setData(response))
         
-        // setData(fetchData())
         setShowSelectedItems(true)
     }
     
