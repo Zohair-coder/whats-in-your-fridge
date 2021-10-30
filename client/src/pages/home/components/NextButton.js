@@ -1,9 +1,15 @@
 import React from 'react'
+import { useHistory } from "react-router-dom"
 
-function NextButton() {
+function NextButton(props) {
+
+    const history = useHistory()
+    const handleClick = () => {
+        history.push("/results", { items: props.items });
+    }
     return (
         <div>
-            <button>Next</button>
+            <button onClick={handleClick}>Next</button>
         </div>
     )
 }

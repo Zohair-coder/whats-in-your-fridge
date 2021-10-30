@@ -2,7 +2,6 @@ import React from 'react'
 
 function Result(props) {
 
-    console.log(props.data)
     let items;
     if (JSON.stringify(props.data) !== '{}') {
         items = <ul>
@@ -19,10 +18,7 @@ function Result(props) {
     return (
         <div>
             <h1>Selected Items</h1>
-            <ul>
-                {items}
-                {/* Test */}
-            </ul>
+            {items}
         </div>
     )
 }
