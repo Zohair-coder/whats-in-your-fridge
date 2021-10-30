@@ -9,7 +9,7 @@ import SelectedItems from "./SelectedItems"
 function Form() {
 
     const [showSelectedItems, setShowSelectedItems] = useState(false)
-    const [responseList, setResponseList] = useState([])
+    const [selectedItems, setSelectedItems] = useState([])
     
     const handleSubmit = (event, search) => {
         event.preventDefault()
@@ -28,12 +28,12 @@ function Form() {
             }
         })
         .then(response => response.data)
-        .then(response => setResponseList(oldResponses => [...oldResponses, response]))
+        .then(response => setSelectedItems(oldResponses => [...oldResponses, response.results[0]]))
         
         setShowSelectedItems(true)
     }
     
-    let selectedItemsComponent = showSelectedItems ? <SelectedItems data={responseList}/> : null
+    let selectedItemsComponent = showSelectedItems ? <SelectedItems data={selectedItems}/> : null
 
     
     return (

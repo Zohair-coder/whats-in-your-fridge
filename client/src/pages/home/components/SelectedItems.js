@@ -6,10 +6,15 @@ function Result(props) {
     let items;
     if (JSON.stringify(props.data) !== '{}') {
         items = <ul>
-            {props.data.map(ingredient => <li key={ingredient.results[0].id}>{ingredient.results[0].name} {ingredient.results[0].id}</li>)}
+            {props.data.map(ingredient =>
+                <li key={ingredient.id}>
+                    {ingredient.name} {ingredient.id}
+                </li>
+            )
+            }
         </ul>
     } else {
-        items =  <h4>Searching...</h4>
+        items = <h4>Searching...</h4>
     }
     return (
         <div>
