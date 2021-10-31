@@ -1,13 +1,12 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import { useLocation } from "react-router-dom"
+import { useLocation, Link } from "react-router-dom"
 
 function Results() {
-    
+
     let location = useLocation()
     const [recipes, setRecipes] = useState([])
-    
-    
+
     useEffect(() => {
         let ingredientNames = ""
         location.state.items.forEach(ingredient => ingredientNames += ingredient.name + ",");
@@ -17,7 +16,7 @@ function Results() {
             apiKey: "37299eda2bf644f7a90f8edb1736f7d6",
             ingredients: ingredientNames
         })
-    
+
         let base_url = "https://api.spoonacular.com/recipes/findByIngredients"
         let url = base_url + "?" + params.toString()
 
@@ -28,15 +27,18 @@ function Results() {
                 "Content-Type": "application/json"
             }
         })
-    
+
         resp.then(r => {
             setRecipes(r.data);
         })
 
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
-    console.log(recipes)
 
-    const recipeComponent = recipes.map(recipe => <h3>{recipe.title}</h3>)
+    const recipeComponent = recipes.map(recipe =>
+    <Link to={"/recipe?id=" + recipe.id}>
+    <h3 key={recipe.id}>{recipe.title}</h3>
+    </Link>
+    )
 
     return (
         <div>
