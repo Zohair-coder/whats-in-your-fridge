@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import axios from "axios"
-import parse from "html-react-parser"
 
 function Recipe() {
     const { id } = useParams();
@@ -29,7 +28,7 @@ function Recipe() {
 
     let body = <p>Loading...</p>;
     if (data.length !== 0) {
-        body = <div>{parse(data.instructions)}</div>;
+        body = <p>{data.instructions}</p>;
     }
     
     return (
