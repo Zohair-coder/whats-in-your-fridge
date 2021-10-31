@@ -3,7 +3,7 @@ import React from 'react'
 function Result(props) {
 
     let items;
-    if (JSON.stringify(props.data) !== '{}') {
+    if (JSON.stringify(props.data) !== '[]') {
         items = <ul>
             {props.data.map(ingredient =>
                 <li key={ingredient.id}>
