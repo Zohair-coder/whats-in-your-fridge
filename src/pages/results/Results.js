@@ -35,7 +35,7 @@ function Results() {
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     const recipeComponent = recipes.map(recipe =>
-    <Link to={"/recipe?id=" + recipe.id}>
+    <Link to={"/recipe/" + recipe.id}>
     <h3 key={recipe.id}>{recipe.title}</h3>
     </Link>
     )
