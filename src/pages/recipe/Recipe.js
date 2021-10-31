@@ -22,7 +22,7 @@ function Recipe() {
                 "Content-Type": "application/json"
             }
         })
-
+        
         resp.then(r => setData(r.data));
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
