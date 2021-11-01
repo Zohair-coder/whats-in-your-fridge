@@ -33,7 +33,7 @@ function Form() {
             }
             throw err;
         }
-            )
+        )
         .then(response => response.data)
         .then(response => setSelectedItems(oldResponses => [...oldResponses, response.results[0]]))
         .then(setShowSelectedItems(true))
