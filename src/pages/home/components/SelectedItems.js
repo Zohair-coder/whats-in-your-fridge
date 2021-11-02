@@ -1,26 +1,44 @@
+import { List, ListItem, ListItemText, Typography } from '@mui/material';
 import React from 'react'
 
-function Result(props) {
+function SelectedItems(props) {
 
     let items;
     if (JSON.stringify(props.data) !== '[]') {
-        items = <ul>
+        items = <List>
             {props.data.map(ingredient =>
-                <li key={ingredient.id}>
-                    {ingredient.name} {ingredient.id}
-                </li>
+                <ListItem key={ingredient.id}>
+                    <ListItemText
+                        primary={ingredient.name}
+                    />
+                </ListItem>
             )
             }
-        </ul>
+        </List>
+        // items = <ul>
+        //     {props.data.map(ingredient =>
+        //         <li key={ingredient.id}>
+        //             {ingredient.name} {ingredient.id}
+        //         </li>
+        //     )
+        //     }
+        // </ul>
     } else {
-        items = <h4>Searching...</h4>
+        // items = <Typography variant ="p">Searching...</Typography>
+        items = <List>
+            <ListItem>
+                <ListItemText
+                    primary="Searching..."
+                />
+            </ListItem>
+        </List>
     }
     return (
         <div>
-            <h1>Selected Items</h1>
+            <Typography variant="h4" sx={{ mt: 4 }}>Selected Items</Typography>
             {items}
         </div>
     )
 }
 
-export default Result
+export default SelectedItems

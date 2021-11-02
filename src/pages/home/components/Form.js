@@ -44,7 +44,9 @@ function Form() {
     
     return (
         <div>
-            <SearchBar submit={handleSubmit}/>
+            <SearchBar
+                submit={handleSubmit}
+            />
             {error !== "" ?
             <h3>{error}</h3> :
             selectedItemsComponent}

@@ -19,10 +19,15 @@ function SearchBar(props) {
     return (
 
         <form onSubmit={handleSubmit}>
-            <TextField className="searchBar" label="Search Recipe's" />
-            <br />
-            <input type="text" value={searchValue} onChange={handleChange} placeholder="Search..."></input>
-            <input type="submit" value="Submit" />
+            <TextField
+                className = "searchBar"
+                value = {searchValue}
+                onChange = {handleChange}
+                label = "Search Recipe's"
+                sx = {{
+                    marginLeft: 10
+                }} 
+            />
         </form>
     )
 }

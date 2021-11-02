@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from "react-router-dom"
+import Button from '@mui/material/Button';
 
 function NextButton(props) {
 
@@ -9,7 +10,17 @@ function NextButton(props) {
     }
     return (
         <div>
-            <button onClick={handleClick}>Next</button>
+            <Button
+                variant="contained"
+                onClick={handleClick}
+                sx={{
+                    ml: 52,
+                    mt: 5
+                }}    
+            >
+                Next
+            </Button>
+            {/* <button onClick={handleClick}>Next</button> */}
         </div>
     )
 }

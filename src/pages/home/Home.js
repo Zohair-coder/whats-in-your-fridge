@@ -8,7 +8,13 @@ function Home() {
     return (
         <Container maxWidth="sm">
             <Box sx={{ my: 20 }}>
-                <Heading variant="h2" sx={{ my: 10 }} />
+                <Heading
+                    variant="h2"
+                    sx={{
+                        my: 10,
+                        textAlign: "center"
+                    }}
+                />
                 <Form />
             </Box>
         </Container>
