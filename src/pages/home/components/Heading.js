@@ -1,10 +1,9 @@
+import { Typography } from '@mui/material'
 import React from 'react'
 
-function Heading() {
+function Heading(props) {
     return (
-        <div>
-            <h1>What's in your fridge</h1>
-        </div>
+        <Typography {...props}>What's in your fridge</Typography>
     )
 }
 
