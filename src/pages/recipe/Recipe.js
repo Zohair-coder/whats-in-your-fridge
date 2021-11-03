@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import axios from "axios"
+import { Container, Typography } from '@mui/material';
+import parse from 'html-react-parser';
 
 function Recipe() {
     const { id } = useParams();
@@ -28,14 +30,27 @@ function Recipe() {
 
     let body = <p>Loading...</p>;
     if (data.length !== 0) {
-        body = <p>{data.instructions}</p>;
+        let pattern = /<.+>/;
+        if (pattern.test(data.instructions)) {
+            body = parse(data.instructions)
+        } else {
+            body = <p>{data.instructions}</p>;
+        }
     }
     
     return (
-        <div>
-            <h1>{data.title}</h1>
+        <Container maxWidth="sm">
+            <Typography
+                variant="h3"
+                sx = {{
+                    mt: 9,
+                    mb: 6
+                }}
+            >
+                {data.title}
+            </Typography>
             {body}
-        </div>
+        </Container>
     )
 }
 

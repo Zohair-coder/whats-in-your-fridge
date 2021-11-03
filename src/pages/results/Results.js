@@ -1,3 +1,4 @@
+import { Container, Typography } from '@mui/material'
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { useLocation, Link } from "react-router-dom"
@@ -41,10 +42,18 @@ function Results() {
     )
 
     return (
-        <div>
-            <h1>Recipe's</h1>
+        <Container maxWidth="sm">
+            <Typography
+                variant = "h2"
+                sx = {{
+                    mt: 13,
+                    mb: 10
+                }}
+            >
+                Recipe's
+            </Typography>
             {recipeComponent}
-        </div>
+        </ Container>
     )
 }
 
