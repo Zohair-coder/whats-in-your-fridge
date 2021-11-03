@@ -15,7 +15,7 @@ function Form() {
         event.preventDefault()
         let base_url = "https://api.spoonacular.com/food/ingredients/search"
         const params = new URLSearchParams({
-            apiKey: "37299eda2bf644f7a90f8edb1736f7d6",
+            apiKey: "4ce04e457c8348cfaec8ee0c7100b2f8",
             query: search,
             number: 1
         })
