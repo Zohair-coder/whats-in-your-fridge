@@ -37,7 +37,15 @@ function Results() {
 
     const recipeComponent = recipes.map(recipe =>
     <Link to={"/recipe/" + recipe.id}>
-    <h3 key={recipe.id}>{recipe.title}</h3>
+    <Typography
+        variant="h5"
+        key={recipe.id}
+        sx = {{
+            mb: 2
+        }}
+        >
+            {recipe.title}
+        </Typography>
     </Link>
     )
 

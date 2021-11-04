@@ -15,16 +15,7 @@ function SelectedItems(props) {
             )
             }
         </List>
-        // items = <ul>
-        //     {props.data.map(ingredient =>
-        //         <li key={ingredient.id}>
-        //             {ingredient.name} {ingredient.id}
-        //         </li>
-        //     )
-        //     }
-        // </ul>
     } else {
-        // items = <Typography variant ="p">Searching...</Typography>
         items = <List>
             <ListItem>
                 <ListItemText

@@ -28,13 +28,16 @@ function Recipe() {
         resp.then(r => setData(r.data));
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-    let body = <p>Loading...</p>;
+    let body = <Typography variant="p">Loading...</Typography>;
     if (data.length !== 0) {
         let pattern = /<.+>/;
         if (pattern.test(data.instructions)) {
             body = parse(data.instructions)
-        } else {
-            body = <p>{data.instructions}</p>;
+        } else if (data.instructions === "" || data.instructions === null){
+            body = <Typography variant="p">No instructions :(</Typography>
+        }
+         else {
+            body = <Typography variant="p">{data.instructions}</Typography>;
         }
     }
     
