@@ -51,7 +51,7 @@ function SearchBar(props) {
                                 {...params}
                                 className="searchBar"
                                 onChange={handleChange}
-                                label="Search Recipe's"
+                                label="Search Ingredients"
                                 sx={{
                                     marginLeft: 10
                                 }}
