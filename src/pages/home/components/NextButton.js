@@ -16,11 +16,11 @@ function NextButton(props) {
                 sx={{
                     ml: 52,
                     mt: 5
-                }}    
+                }}
+                disabled={!props.isEnabled} 
             >
                 Next
             </Button>
-            {/* <button onClick={handleClick}>Next</button> */}
         </div>
     )
 }
