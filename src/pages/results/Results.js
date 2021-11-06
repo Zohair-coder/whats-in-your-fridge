@@ -10,7 +10,7 @@ function Results() {
 
     useEffect(() => {
         let ingredientNames = ""
-        location.state.items.forEach(ingredient => ingredientNames += ingredient.name + ",");
+        location.state.items.forEach(ingredient => ingredientNames += ingredient + ",");
         ingredientNames = ingredientNames.slice(0, -1); // remove the last comma
 
         const params = new URLSearchParams({
@@ -36,7 +36,7 @@ function Results() {
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     const recipeComponent = recipes.map(recipe =>
-    <Link to={"/recipe/" + recipe.id}>
+    <Link to={"/recipe/" + recipe.id} key={recipe.id}>
     <Typography
         variant="h5"
         key={recipe.id}
