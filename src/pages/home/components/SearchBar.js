@@ -7,8 +7,10 @@ import Autocomplete from '@mui/material/Autocomplete';
 function SearchBar(props) {
 
     const [suggestions, setSuggestions] = useState([])
+    const [items, setItems] = useState("")
 
     const handleChange = (event) => {
+        setItems(event.target.value)
         var axios = require("axios").default;
 
         var options = {
@@ -45,16 +47,18 @@ function SearchBar(props) {
                     multiple
                     autoHighlight
                     options={suggestions}
+                    noOptionsText={items.length !== 0 ? "No ingredients found" : "Start typing to search for ingredients"}
                     renderInput={(params) => {
                         return (
                             <TextField
                                 {...params}
                                 className="searchBar"
                                 onChange={handleChange}
-                                label="Search Ingredients"
+                                label="Search ingredients"
                                 sx={{
                                     marginLeft: 10
                                 }}
+                                value={items}
                             />
                         )
                     }}
