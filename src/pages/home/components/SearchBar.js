@@ -8,9 +8,7 @@ var axios = require("axios").default;
 function SearchBar(props) {
 
     const [suggestions, setSuggestions] = useState([])
-    let items = [];
     const handleChange = (event) => {
-        items = event.target.value;
         var options = {
             method: 'GET',
             url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/autocomplete',
@@ -45,7 +43,7 @@ function SearchBar(props) {
                     multiple
                     autoHighlight
                     options={suggestions}
-                    noOptionsText={items.length !== 0 ? "No ingredients found" : "Start typing to search for ingredients"}
+                    noOptionsText="Start typing to search for ingredients"
                     renderInput={(params) => {
                         return (
                             <TextField
@@ -56,7 +54,6 @@ function SearchBar(props) {
                                 sx={{
                                     marginLeft: 10
                                 }}
-                                value={items}
                             />
                         )
                     }}
