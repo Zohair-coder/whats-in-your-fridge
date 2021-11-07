@@ -1,31 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
-import axios from "axios"
 import { Container, Typography } from '@mui/material';
 import parse from 'html-react-parser';
+var axios = require("axios").default;
 
 function Recipe() {
     const { id } = useParams();
-    const [ data, setData ] = useState([]);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
-        const params = new URLSearchParams({
-            apiKey: "4ce04e457c8348cfaec8ee0c7100b2f8",
-            includeNutrition: true
-        })
 
-        let base_url = `https://api.spoonacular.com/recipes/${id}/information`
-        let url = base_url + "?" + params.toString()
-
-        let resp = axios({
-            url: url,
-            method: "get",
+        var options = {
+            method: 'GET',
+            url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id}/information`,
+            params: { includeNutrition: 'true' },
             headers: {
-                "Content-Type": "application/json"
+                'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+                'x-rapidapi-key': '9488865383msh30a38be9ec16e99p109d9bjsn9090d29ce12f'
             }
-        })
-        
-        resp.then(r => setData(r.data));
+        };
+
+        axios.request(options).then(function (response) {
+            setData(response.data);
+        }).catch(function (error) {
+            console.error(error);
+        });
+
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     let body = <Typography variant="p">Loading...</Typography>;
@@ -33,19 +33,19 @@ function Recipe() {
         let pattern = /<.+>/;
         if (pattern.test(data.instructions)) {
             body = parse(data.instructions)
-        } else if (data.instructions === "" || data.instructions === null){
+        } else if (data.instructions === "" || data.instructions === null) {
             body = <Typography variant="p">No instructions :(</Typography>
         }
-         else {
+        else {
             body = <Typography variant="p">{data.instructions}</Typography>;
         }
     }
-    
+
     return (
         <Container maxWidth="sm">
             <Typography
                 variant="h3"
-                sx = {{
+                sx={{
                     mt: 9,
                     mb: 6
                 }}
