@@ -34,7 +34,9 @@ function SearchBar(props) {
 
     const handleSubmit = (event, value) => {
         event.preventDefault()
-        props.submit(value)
+        if (value) {
+            props.submit(value)
+        }
     }
 
     return (
