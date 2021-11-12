@@ -20,7 +20,12 @@ function SearchBar(props) {
         };
         
         axios.request(options).then(function (response) {
-            setSuggestions(response.data.map(result => result.name))
+            console.log(response.data.length)
+            if (response.data.length === 0) {
+                setSuggestions(["No ingredients found"]);
+            } else {
+                setSuggestions(response.data.map(result => result.name))
+            }
         }).catch(function (error) {
             console.error(error);
         });
