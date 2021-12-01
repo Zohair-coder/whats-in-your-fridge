@@ -57,7 +57,7 @@ function Results() {
                     mb: 10
                 }}
             >
-                Recipe's
+                Recipes
             </Typography>
             {recipeComponent}
         </ Container>
