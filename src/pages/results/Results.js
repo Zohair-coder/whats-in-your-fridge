@@ -37,7 +37,11 @@ function Results() {
 
     const recipeComponent = recipes.map(recipe =>
         <Link to={"/recipe/" + recipe.id} key={recipe.id}>
-            <img src={`https://spoonacular.com/recipeImages/${recipe.id}-312x231.${recipe.imageType}`} alt="recipe" />
+            <img
+                src={`https://spoonacular.com/recipeImages/${recipe.id}-312x231.${recipe.imageType}`}
+                alt="recipe"
+                style={{ borderRadius: '1.5%' }}
+            />
             <Typography
                 variant="h5"
                 key={recipe.id}
