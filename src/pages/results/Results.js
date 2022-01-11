@@ -36,26 +36,28 @@ function Results() {
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     const recipeComponent = recipes.map(recipe =>
-        <Link to={"/recipe/" + recipe.id} key={recipe.id}>
-            <img
-                src={`https://spoonacular.com/recipeImages/${recipe.id}-636x393.${recipe.imageType}`}
-                alt="recipe"
-                style={{
-                    borderRadius: '1.5%',
-                    width: "312px",
-                    height: "231px"
-                 }}
-            />
-            <Typography
-                variant="h5"
-                key={recipe.id}
-                sx={{
-                    mb: 10
-                }}
-            >
-                {recipe.title.length > 20 ? recipe.title.slice(0, 20) + "..." : recipe.title}
-            </Typography>
-        </Link>
+        <div style={{marginBottom: "60px"}}>
+            <Link to={"/recipe/" + recipe.id} key={recipe.id}>
+                <img
+                    src={`https://spoonacular.com/recipeImages/${recipe.id}-636x393.${recipe.imageType}`}
+                    alt="recipe"
+                    style={{
+                        borderRadius: '1.5%',
+                        width: "312px",
+                        height: "231px"
+                    }}
+                />
+                <Typography
+                    variant="h5"
+                    key={recipe.id}
+                    sx={{
+                        mb: 2
+                    }}
+                >
+                    {recipe.title.length > 20 ? recipe.title.slice(0, 20) + "..." : recipe.title}
+                </Typography>
+            </Link>
+        </div>
     )
 
     return (
@@ -72,8 +74,8 @@ function Results() {
             <div style={{
                 display: "flex",
                 flexWrap: "wrap",
-                justifyContent: "space-between"
-                }}>
+                justifyContent: "space-between",
+            }}>
                 {recipeComponent}
             </div>
         </ Container>
