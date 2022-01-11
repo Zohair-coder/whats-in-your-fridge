@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import { Container, Typography } from '@mui/material';
 import parse from 'html-react-parser';
+import config from "../../config"
 var axios = require("axios").default;
 
 function Recipe() {
@@ -15,8 +16,8 @@ function Recipe() {
             url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id}/information`,
             params: { includeNutrition: 'true' },
             headers: {
-                'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-                'x-rapidapi-key': '9488865383msh30a38be9ec16e99p109d9bjsn9090d29ce12f'
+                'x-rapidapi-host': config["x-rapidapi-host"],
+                'x-rapidapi-key': config["x-rapidapi-key"]
             }
         };
 

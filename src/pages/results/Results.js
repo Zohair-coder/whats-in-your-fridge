@@ -1,6 +1,7 @@
 import { Container, Typography } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import { useLocation, Link } from "react-router-dom"
+import config from "../../config"
 var axios = require("axios").default;
 
 function Results() {
@@ -22,8 +23,8 @@ function Results() {
                 ranking: '2'
             },
             headers: {
-                'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-                'x-rapidapi-key': '9488865383msh30a38be9ec16e99p109d9bjsn9090d29ce12f'
+                'x-rapidapi-host': config["x-rapidapi-host"],
+                'x-rapidapi-key': config["x-rapidapi-key"]
             }
         };
 
@@ -36,20 +37,21 @@ function Results() {
 
     const recipeComponent = recipes.map(recipe =>
         <Link to={"/recipe/" + recipe.id} key={recipe.id}>
+            <img src={`https://spoonacular.com/recipeImages/${recipe.id}-312x231.${recipe.imageType}`} alt="recipe" />
             <Typography
                 variant="h5"
                 key={recipe.id}
                 sx={{
-                    mb: 2
+                    mb: 10
                 }}
             >
-                {recipe.title}
+                {recipe.title.length > 20 ? recipe.title.slice(0, 20) + "..." : recipe.title}
             </Typography>
         </Link>
     )
 
     return (
-        <Container maxWidth="sm">
+        <Container>
             <Typography
                 variant="h2"
                 sx={{
@@ -59,7 +61,13 @@ function Results() {
             >
                 Recipes
             </Typography>
-            {recipeComponent}
+            <div style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "space-between"
+                }}>
+                {recipeComponent}
+            </div>
         </ Container>
     )
 }
