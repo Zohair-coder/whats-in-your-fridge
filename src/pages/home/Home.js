@@ -22,15 +22,4 @@ function Home() {
     )
 }
 
-function App() {
-    return (
-        <div
-            style={{
-                backgroundColor: #ccffd2
-                width: '100px',
-                height: '100px'
-            }}
-    )
-}
-
 export default Home
