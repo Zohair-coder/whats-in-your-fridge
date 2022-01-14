@@ -6,6 +6,12 @@ import { Box } from '@mui/system';
 
 function Home() {
     return (
+        <div
+            style={{
+                backgroundColor: #ccffd2
+                width: '100px',
+                height: '100px'
+            }}
         <Container maxWidth="sm">
             <Box sx={{ my: 20 }}>
                 <Heading
@@ -18,17 +24,6 @@ function Home() {
                 <Form />
             </Box>
         </Container>
-    )
-}
-
-function App() {
-    return (
-        <div
-            style={{
-                backgroundColor: #ccffd2
-                width: '100px',
-                height: '100px'
-            }}
     )
 }
 
