@@ -6,6 +6,7 @@ import { Box } from '@mui/system';
 
 function Home() {
     return (
+        <div className="GreenMintBackground.png" />
         <Container maxWidth="sm">
             <Box sx={{ my: 20 }}>
                 <Heading
