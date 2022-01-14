@@ -6,7 +6,6 @@ import { Box } from '@mui/system';
 
 function Home() {
     return (
-        <div className="GreenMintBackground.png" />
         <Container maxWidth="sm">
             <Box sx={{ my: 20 }}>
                 <Heading
@@ -22,4 +21,17 @@ function Home() {
     )
 }
 
+function App() {
+  return (
+    <div
+      style={{
+        backgroundColor: 'red',
+        width: '100px',
+        height: '100px'
+      }}
+    />
+  );
+}
+
 export default Home
+export default App
