@@ -47,7 +47,6 @@ function Results() {
                 style = {{
                     color: "black",
                     textDecoration: "none",
-                    fontFamily: "Exo, sans-serif",
                 }}
                 key={recipe.id}>
                 <img
@@ -66,6 +65,7 @@ function Results() {
                         mb: 2,
                         fontSize: '1rem',
                         fontWeight: "bold",
+                        fontFamily: "Exo, sans-serif",
                     }}
                 >
                     {recipe.title.length > 50 ? recipe.title.slice(0, 50) + "..." : recipe.title}
@@ -75,6 +75,7 @@ function Results() {
                     key={recipe.id}
                     sx = {{
                         color: "#878282",
+                        fontFamily: "Exo, sans-serif",
                     }} 
                 >
                     {recipe.missedIngredientCount > 0 ?
