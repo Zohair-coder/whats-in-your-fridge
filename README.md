@@ -6,12 +6,10 @@ UPDATE: app is now live on https://whats-in-your-fridge-ci102.herokuapp.com/.
 
 To run the app, make sure you have [node](https://nodejs.org/en/) installed.
 
-Go into the api directory and run `npm install`.
-Then go into the client directory and run `npm install`.
+Run `npm install`.
 
 Once the dependencies are installed, we can run the app.
 
-Go into the api directory and run `npm start`.
-Launch a new terminal and go into the client directory and run `npm start`.
+Run `npm start`.
 
 The app should now be running on `localhost:3000`.
