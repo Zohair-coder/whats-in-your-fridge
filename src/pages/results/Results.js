@@ -77,7 +77,10 @@ function Results() {
                         color: "#878282",
                     }} 
                 >
-                    Missing Ingredients: {recipe.missedIngredients.map(ingredient => ingredient.name).join(", ")}
+                    {recipe.missedIngredientCount > 0 ?
+                        `Missing Ingredients: ${recipe.missedIngredients.map(ingredient => ingredient.name).join(", ")}` :
+                        "No missing ingredients"
+                        }
                 </Typography>
 
             </Link>
