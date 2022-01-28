@@ -18,7 +18,7 @@ function Results() {
             url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients',
             params: {
                 ingredients: ingredientNames,
-                number: '10',
+                number: '100',
                 ignorePantry: 'true',
                 ranking: '2'
             },
@@ -40,6 +40,7 @@ function Results() {
             style={{
                 marginBottom: "60px",
                 padding: "20px",
+                width: "370px"
                 }}
         >
             <Link
@@ -68,7 +69,7 @@ function Results() {
                         fontFamily: "Exo, sans-serif",
                     }}
                 >
-                    {recipe.title.length > 50 ? recipe.title.slice(0, 50) + "..." : recipe.title}
+                    {recipe.title}
                 </Typography>
                 <Typography
                     variant="p"
