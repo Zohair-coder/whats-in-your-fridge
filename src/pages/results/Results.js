@@ -1,4 +1,4 @@
-import { Container, Typography } from '@mui/material'
+import { Container, Skeleton, Typography } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import { useLocation, Link } from "react-router-dom"
 import config from "../../config"
@@ -106,7 +106,26 @@ function Results() {
                 flexWrap: "wrap",
                 justifyContent: "space-between",
             }}>
-                {recipeComponent}
+                {recipes.length !== 0 ?
+                recipeComponent :
+                <>
+                <div>
+                    <Skeleton variant="rect" width="370px" height="231px" />
+                    <Skeleton variant="text" width="70%" />
+                    <Skeleton variant="text" width="80%" />
+                </div>
+                <div>
+                    <Skeleton variant="rect" width="370px" height="231px" />
+                    <Skeleton variant="text" width="70%" />
+                    <Skeleton variant="text" width="80%" />
+                </div>
+                <div>
+                    <Skeleton variant="rect" width="370px" height="231px" />
+                    <Skeleton variant="text" width="70%" />
+                    <Skeleton variant="text" width="80%" />
+                </div>
+                </>
+                }
             </div>
         </ Container>
     )
