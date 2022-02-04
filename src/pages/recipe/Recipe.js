@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, Skeleton } from '@mui/material';
 import parse from 'html-react-parser';
 import config from "../../config"
 var axios = require("axios").default;
@@ -29,7 +29,15 @@ function Recipe() {
 
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-    let body = <Typography variant="p">Loading...</Typography>;
+    let body = <div>
+                    <Skeleton sx = {{padding: 2}}variant="text" width="100%" />
+                    <Skeleton sx = {{marginBottom: 10, padding: 2}}variant="text" width="100%" />
+                    <Skeleton variant="text" width="100%" />
+                    <Skeleton variant="text" width="100%" />
+                    <Skeleton variant="text" width="100%" />
+                    <Skeleton variant="text" width="100%" />
+
+    </div>;
     if (data.length !== 0) {
         let pattern = /<.+>/;
         if (pattern.test(data.instructions)) {
