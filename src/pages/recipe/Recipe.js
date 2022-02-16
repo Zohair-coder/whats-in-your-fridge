@@ -30,12 +30,12 @@ function Recipe() {
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     let body = <div>
-                    <Skeleton sx = {{padding: 2}}variant="text" width="100%" />
-                    <Skeleton sx = {{marginBottom: 10, padding: 2}}variant="text" width="100%" />
-                    <Skeleton variant="text" width="100%" />
-                    <Skeleton variant="text" width="100%" />
-                    <Skeleton variant="text" width="100%" />
-                    <Skeleton variant="text" width="100%" />
+        <Skeleton sx={{ padding: 2 }} variant="text" width="100%" />
+        <Skeleton sx={{ marginBottom: 10, padding: 2 }} variant="text" width="100%" />
+        <Skeleton variant="text" width="100%" />
+        <Skeleton variant="text" width="100%" />
+        <Skeleton variant="text" width="100%" />
+        <Skeleton variant="text" width="100%" />
 
     </div>;
     if (data.length !== 0) {
@@ -46,7 +46,16 @@ function Recipe() {
             body = <Typography variant="p">No instructions :(</Typography>
         }
         else {
-            body = <Typography variant="p">{data.instructions}</Typography>;
+            console.log(data);
+            body = <div>
+                <Typography variant="h5">Ingredients:</Typography>
+                <ul>
+                    {data.extendedIngredients.map((ingredient, index) => {
+                        return <li variant="p">{ingredient.original}</li>
+                    })}
+                </ul>
+                <Typography variant="p">{data.instructions}</Typography>
+            </div>;
         }
     }
 
