@@ -1,0 +1,55 @@
+.navContainer {
+  width: 100%;
+
+  background: transparent;
+}
+
+.button {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.leftSidebar {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: 20%;
+  justify-content: start;
+  position: fixed;
+  padding: 40px 20px;
+  height: 100vh;
+  z-index: 20;
+  box-shadow: 0 8px 30px rgb(0, 0, 0, 0.12);
+  transition: all 0.3s ease-in-out;
+
+  /* transform: translateX(-100%); */
+}
+
+.link {
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.closeButtonSVG {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
