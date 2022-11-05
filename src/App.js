@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom"
 import Home from "./pages/home/Home"
 import Results from "./pages/results/Results"
 import Recipe from "./pages/recipe/Recipe.js"
-import AboutUs from "./pages/about-us/about-us"
+
 
 function App() {
   return (
@@ -13,7 +13,6 @@ function App() {
         <Route exact path="/"><Home /></Route>
         <Route path="/results"><Results /></Route>
         <Route path="/recipe/:id"><Recipe /></Route>
-        <Route path="/about"><AboutUs /></Route>
       </Switch>
     </div>
   )
