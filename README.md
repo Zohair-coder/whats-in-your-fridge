@@ -2,7 +2,7 @@
 
 CI 102/103 project to create a website to let users input ingredients they have, and will generate a list of recipes containing only the ingredients they currently have. 
 
-UPDATE: app is now live on https://whats-in-your-fridge-ci102.herokuapp.com/.
+UPDATE: app is now live on https://fridge.zohair.dev/.
 
 To run the app, make sure you have [node](https://nodejs.org/en/) installed.
 
